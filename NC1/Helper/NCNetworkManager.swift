@@ -57,7 +57,7 @@ struct NCNetworkInfo {
     func isIosdaTraningWifi() -> Bool {
         let networkInfo = getWifiInfo()
         
-        print(networkInfo.first?.bssid)
+        let ssid = networkInfo.first?.bssid ?? "ssid"
         
-        return macAddressWifi.contains(networkInfo.first!.bssid)
+        return macAddressWifi.contains(ssid)
     }
